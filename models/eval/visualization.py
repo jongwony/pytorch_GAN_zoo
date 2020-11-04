@@ -67,7 +67,7 @@ def test(parser, visualisation=None):
 
     if checkpointData is None:
         raise FileNotFoundError(
-            "Not checkpoint found for model " + name + " at directory " + dir)
+            "Not checkpoint found for model " + name + " at directory " + checkPointDir)
 
     modelConfig, pathModel, _ = checkpointData
     if scale is None:

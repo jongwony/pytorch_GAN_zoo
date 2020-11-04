@@ -61,7 +61,7 @@ class AttribDataset(Dataset):
                 with open(attribDictPath, 'rb') as file:
                     tmpDict = json.load(file)
                 self.listImg = [imgName for imgName in os.listdir(pathdb)
-                                if (os.path.splitext(imgName)[1] in [".jpg",
+                                if (os.path.splitext(imgName)[1] in [".jpg", ".jpeg",
                                                                      ".png", ".npy"] and imgName in tmpDict)]
             else:
                 self.loadAttribDict(attribDictPath, pathdb, specificAttrib)
@@ -71,7 +71,7 @@ class AttribDataset(Dataset):
         else:
             self.attribDict = None
             self.listImg = [imgName for imgName in os.listdir(pathdb)
-                            if os.path.splitext(imgName)[1] in [".jpg", ".png",
+                            if os.path.splitext(imgName)[1] in [".jpg", ".png", ".jpeg",
                                                                 ".npy"]]
 
         if pathMask is not None:
