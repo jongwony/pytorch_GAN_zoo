@@ -237,7 +237,7 @@ class GANTrainer():
             self.lossProfile = pkl.load(open(tmpPathLossLog, 'rb'))
             self.lossProfile = self.lossProfile[:(self.startScale + 1)]
 
-            if self.lossProfile[-1]["iter"][-1] > self.startIter:
+            if self.lossProfile[-1]['iter'] and self.lossProfile[-1]["iter"][-1] > self.startIter:
                 indexStop = next(x[0] for x in enumerate(self.lossProfile[-1]["iter"])
                                  if x[1] > self.startIter)
                 self.lossProfile[-1]["iter"] = self.lossProfile[-1]["iter"][:indexStop]
